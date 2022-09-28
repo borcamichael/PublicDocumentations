@@ -1,13 +1,3 @@
----
-title: Docker Tasks Doku
-description: 
-published: true
-date: 2022-09-27T18:41:12.959Z
-tags: 
-editor: markdown
-dateCreated: 2022-09-27T15:32:27.479Z
----
-
 # Docker Image from Scratch - HelloWorld with golang
 
 ## For Ubuntu:
@@ -31,7 +21,7 @@ func main() {
 ```docker
 FROM scratch
 
-ADD ./hw /bin/hw
+ADD ./helloworld /bin/hw
 
 CMD ["/bin/hw"]
 ```
@@ -76,11 +66,39 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+
+
+
 app.get('/', (req, res) => {
 
-  weather.find({search: 'Landshut, DE', degreeType: 'C'}, function(err, result){
+  weather.find({search: "Landshut,DE", degreeType: 'C'}, function(err, result){
+   if(err){
+    console.log(err);
 
-   if(err) console.log(err);
+    res.status(500);
+    res.send("internal Err");
+    return;
+   }
+
+   console.log(JSON.stringify(result, null, 2));
+   res.json(result);
+
+  });
+  
+});
+
+app.get('/:location', (req, res) => {
+
+  weather.find({search: req.params.location, degreeType: 'C'}, function(err, result){
+   if(err){
+    console.log(err);
+
+    res.status(500);
+    res.send("internal Err");
+    return;
+   }
+
+   console.log(JSON.stringify(result, null, 2));
    res.json(result);
 
   });
