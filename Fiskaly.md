@@ -97,7 +97,7 @@ Content-Length: 32
 
 Response:
 
-```
+```json
 {
     "_id": "cdb96888-86f5-4b5e-b213-ef265ecc4676",
     "state": "UNINITIALIZED",
@@ -143,7 +143,7 @@ Content-Length: 85
 
 Response:
 
-```
+```json
 {
     "custom_field": "modified_custom_value",
     "custom_field2": "custom_value2"
@@ -171,7 +171,7 @@ Content-Length: 68
 
 Return
 
-```
+```json
 200 OK EMPTY BODY
 ```
 
@@ -193,7 +193,7 @@ Content-Length: 30
 
 Return:
 
-```
+```json
 200 OK EMPTY BODY
 ```
 
@@ -215,7 +215,7 @@ Content-Length: 30
 
 Response
 
-```
+```json
 {
     "_id": "cdb96888-86f5-4b5e-b213-ef265ecc4676",
     "description": "fiskaly sign cloud-TSE (cdb96888-86f5-4b5e-b213-ef265ecc4676)",
@@ -263,7 +263,7 @@ Content-Length: 128
 
 Response:
 
-```
+```json
 {
     "_id": "d884dfc1-b8d6-4c59-a41f-2c33c916f30e",
     "state": "REGISTERED",
@@ -297,7 +297,7 @@ Content-Length: 28
 
 Response:
 
-```
+```json
 {
     "_id": "a32168e1-6bd2-4dca-b421-8e4176649c8e",
     "state": "DEREGISTERED",
@@ -330,7 +330,7 @@ Content-Length: 2
 
 Response:
 
-```
+```json
 200 OK NO BODY
 ```
 
@@ -353,7 +353,7 @@ Content-Length: 76
 
 Response:
 
-```
+```json
 {
     "schema": {},
     "state": "ACTIVE",
@@ -421,7 +421,7 @@ Content-Length: 383
 
 Response:
 
-```
+```json
 {
     "schema": {
         "standard_v1": {
@@ -513,7 +513,7 @@ Content-Length: 385
 
 Response:
 
-```
+```json
 {
     "schema": {
         "standard_v1": {
@@ -587,7 +587,7 @@ Content-Length: 27
 
 Response:
 
-```
+```json
 {
     "_id": "cdb96888-86f5-4b5e-b213-ef265ecc4676",
     "description": "fiskaly sign cloud-TSE (cdb96888-86f5-4b5e-b213-ef265ecc4676)",
