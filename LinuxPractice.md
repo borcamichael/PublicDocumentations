@@ -1,5 +1,6 @@
 Linux-Administration Übung:
 - Erstelle eine virtuelle Maschine (mit VirtualBox oder QEMU)
+  - Selbsterklärend
 - Übertrage dein public key auf der virtuellen Maschine, um ssh ohne Passwort nutzen zu können
 - Verbinde dich mit der virtuellen Maschine per SSH
 - Kopiere eine Datei host -> guest und umgekehrt
