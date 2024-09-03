@@ -1,8 +1,9 @@
+
 import { Plugin } from 'vite';
 import fs from 'fs';
 import path from 'path';
 
-export function generateFontPreload(fontName: string): Plugin {
+export function generateFontPreload(fontName: string, selectedFonts: string[]): Plugin {
   return {
     name: 'vite-plugin-font-preload',
     transformIndexHtml(html) {
@@ -16,7 +17,7 @@ export function generateFontPreload(fontName: string): Plugin {
       if (fs.existsSync(fontDir)) {
         const files = fs.readdirSync(fontDir);
         preloadLinks = files
-          .filter((file) => file.endsWith('.woff2'))
+          .filter((file) => selectedFonts.includes(file))
           .map((file) => {
             const filePath = `/fonts/${file}`;
             return `<link rel="preload" href="${filePath}" as="font" type="font/woff2" crossorigin="anonymous" />`;
