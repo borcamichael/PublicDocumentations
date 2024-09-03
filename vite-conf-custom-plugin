@@ -1,0 +1,24 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { generateFontPreload } from './vite-plugin-font-preload';
+import path from 'path';
+
+export default defineConfig({
+  plugins: [
+    react(),
+    generateFontPreload('roboto'), // Use your font name here
+  ],
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: ({ name }) => {
+          if (/\.(woff2?|ttf|otf|eot)$/.test(name ?? '')) {
+            return 'fonts/[name][extname]';
+          }
+          return '[name][extname]';
+        },
+      },
+    },
+    // Other build options if necessary
+  },
+});
